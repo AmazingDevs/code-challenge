@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/ProductManagement/.vs
+/ProductManagement/ProductManagement/bin/Debug/net6.0
+/ProductManagement/ProductManagement/obj
+/ShoppingCart/.vs
+/ShoppingCart/ShoppingCart/bin/Debug/net6.0
+/ShoppingCart/ShoppingCart/obj
