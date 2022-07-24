@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/ProductManagement/.vs
+/ProductManagement/ProductManagement/bin/Debug/net6.0
+/ProductManagement/ProductManagement/obj
+/ShoppingCart
