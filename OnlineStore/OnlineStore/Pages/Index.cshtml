@@ -1,0 +1,129 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+ }
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h4>Take a look on our catalog.</h4>
+    <br>
+</div>
+<div class="row">    
+    <div class="col-12 col-md-6"> 
+        <form class="form-floating justify-content-center" action="/Index" method="get"  id="formProduct">
+            <input type="hidden" name="p" value="0" id="p">
+        </form>
+    </div>    
+    
+    <div class="d-flex container justify-content-center">
+        <br />
+        <nav class="text-center">                
+            <ul class="pagination justify-content-center">
+                @for(int i=1; i<=Model.PageQuantity; i++)
+                {
+                    if(i == Model.CurrentPage)
+                    {
+                        <li class="page-item disabled">
+                            <button class="page-link btn-light" value="@i">@i</button>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item">                                 
+                            <button class="page-link" value="@i" type="submit">@i</button>
+                        </li>
+                    }
+                }
+            </ul>
+        </nav>
+        <br />        
+    </div>          
+</div>
+
+
+
+@if(Model.Products.Count > 0)
+{
+    <div class="row">
+        @foreach(var product in Model.Products)
+        {
+            <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 d-flex align-items-stretch">
+                <div class="card text-center bg-light mb-4">
+                
+                    <img src="@product.Thumbnail" class="card-img-top" alt="@product.Description" style="height: 250px">
+                
+                    <div class="card-header">
+                        US$ @product.Price.ToString("F2")<br>
+                        @product.discountPercentage.ToString("F2")% OFF
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Title</h5>
+                        <p class="card-text">@product.Description</p>                    
+                    </div>
+                    <div class="card-footer">
+                        @if(product.Stock>0)
+                        {
+                            <div><a href="#" class="btn btn-primary">Adicionar ao carrinho</a></div>
+                            <small class="text-muted">Stock: @product.Stock</small>
+                        }
+                        else
+                        {                            
+                            <small class="text-dange"><b>Out of stock</b></small>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <center><h2>No products to show. Please come back later.</h2></center>
+}
+
+<div class="d-flex container justify-content-center">
+    <br />
+    <nav class="text-center">                
+        <ul class="pagination justify-content-center">
+            @for(int i=1; i<=Model.PageQuantity; i++)
+            {
+                if(i == Model.CurrentPage)
+                {
+                    <li class="page-item disabled">
+                        <button class="page-link btn-light" value="@i">@i</button>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">                                 
+                        <button class="page-link" value="@i" type="submit">@i</button>
+                    </li>
+                }
+            }
+        </ul>
+    </nav>
+    <br />        
+</div>    
+
+@section Scripts
+{
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push[0];
+                vars[hash[0]] = hash[1];
+             }
+            return vars;
+        }
+
+        $(".page-link").click(function() {
+            $("#p").val($(this).val());
+            $("#formProduct").submit();
+        });
+    </script>
+}

@@ -11,5 +11,7 @@
 /ShoppingCart/.vs
 /ShoppingCart/ShoppingCart/bin/Debug/net6.0
 /ShoppingCart/ShoppingCart/obj
-/OnlineStore/.vs/OnlineStore/FileContentIndex
-/OnlineStore/OnlineStore
+/OnlineStore/.vs
+/OnlineStore/OnlineStore/bin/Debug/net6.0
+/OnlineStore/OnlineStore/obj/Debug/net6.0
+/OnlineStore/OnlineStore/obj
