@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="utf-8" lang="en-us" />
+        <title>Online Store</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <header class="bg-dark">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <a class="navbar-brand" href="#">Online Store</a>                 
+                </nav>
+            </div>
+        </header>
+        <section class="container" style="padding-bottom: 72px">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </section>
+        <footer class="footer bg-light text-center p-4 fixed-bottom">
+            <div class="container">
+                <span class="text-dark">Copyright &copy; 2022 - OnlineStore </span>                 
+            </div>
+        </footer>        
+    </body>
+</html>
+
+@RenderSection("Scripts", required: false)
