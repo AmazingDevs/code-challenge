@@ -63,9 +63,6 @@ namespace ProductManagement.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("DiscountRate")
-                        .HasColumnType("decimal(5,2)");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(10,2)");
 
@@ -82,6 +79,9 @@ namespace ProductManagement.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("discountPercentage")
+                        .HasColumnType("decimal(5,2)");
 
                     b.HasKey("Id");
 

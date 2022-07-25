@@ -19,9 +19,9 @@ namespace ProductManagement.Models.Dtos
 
 		[Required]
 		[Column(TypeName = "decimal(5,2)")]
-		public decimal DiscountRate { get; set; }
+		public decimal DiscountPercentage { get; set; }
 
-		[Column(TypeName = "decimal(4,2")]
+		[Column(TypeName = "decimal(4,2)")]
 		public decimal Rating { get; set; }
 
 		[Required]
